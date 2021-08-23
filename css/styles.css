@@ -117,6 +117,7 @@ img {
 
 .navbar-toggler img {
     width: 20px;
+    height: auto;
 }
 
 .nav-menu {
