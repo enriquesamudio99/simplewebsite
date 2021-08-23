@@ -1,8 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap');
 
 :root {
-    --h1Size: 2.5rem;
+    --h1Size: 2rem;
     --navbarSize: 3rem;
+}
+
+@media (min-width: 350px) {
+    :root {
+        --h1Size: 2.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        --h1Size: 3.5rem;
+        --navbarSize: 3.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --h1Size: 4.5rem;
+        --navbarSize: 4rem;
+    }
 }
 
 *, *::after, *::before {
@@ -89,6 +109,12 @@ img {
     cursor: pointer;
 }
 
+@media (min-width: 768px) {
+    .navbar-toggler {
+        display: none;
+    }
+}
+
 .navbar-toggler img {
     width: 20px;
 }
@@ -99,7 +125,7 @@ img {
     background-color: rgba(0, 0, 0, 1);
     left: 1rem;
     right: 1rem;
-    height: 60%;
+    height: calc(90% - var(--navbarSize));
     border: 2px solid #fff;
     display: flex;
     flex-direction: column;
@@ -108,8 +134,19 @@ img {
     transition: top .5s ease-in-out;
 }
 
+@media (min-width: 768px) {
+    .nav-menu {
+        position: static;
+        background-color: transparent;
+        flex-direction: row;
+        border: none;
+        height: auto;
+        column-gap: 1.5rem;
+    }
+}
+
 .nav-menu.show {
-    top: calc(var(--navbarSize) + 1rem);
+    top: calc(var(--navbarSize));
 }
 
 .nav-item {
@@ -118,6 +155,12 @@ img {
 
 .nav-item:last-child {
     margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .nav-item {
+        margin-bottom: 0;
+    }
 }
 
 .nav-link {
@@ -143,11 +186,23 @@ img {
     margin-bottom: 1.5rem;
 }
 
+@media (min-width: 1200px) {
+    .hero-title {
+        margin-bottom: 2rem;
+    }
+}
+
 .hero-btns {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
+}
+
+@media (max-width: 350px) {
+    .hero-btns {
+        flex-direction: column;
+    }
 }
 
 .btn {
@@ -160,6 +215,14 @@ img {
     font-weight: 600;
     border: 2px solid #fff;
     transition: color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+@media (min-width: 1200px) {
+    .btn {
+        width: 200px;
+        padding: 1rem 0;
+        border-radius: 2rem;
+    }
 }
 
 .btn:hover {
